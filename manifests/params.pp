@@ -6,6 +6,8 @@ class docker::params {
   $ensure = 'present'
   $service_state = running
   $service_enable = true
+  $service_state_storage = 'stopped'
+  $service_enable_storage = false
   # options
   $selinux_enabled = true
   $bind_to = 'unix:///var/run/docker.sock'

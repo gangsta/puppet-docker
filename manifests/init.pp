@@ -16,6 +16,14 @@
 #   Whether you want to docker daemon to start up at boot
 #   Defaults to true
 #
+# [*service_state_storage*]
+#   Whether you want to docker storage daemon to start up
+#   Defaults to stopped
+#
+# [*service_enable_storage*]
+#   Whether you want to docker storage daemon to start up at boot
+#   Defaults to false
+#
 # [*selinux_enabled*]
 #   Enable selinux support. Default is false. SELinux does  not  presently
 #   support  the  BTRFS storage driver.
@@ -108,6 +116,7 @@
 # [*bridge*]
 #   If you want to take Docker out of the business of creating its own Ethernet bridge entirely, you can set up your
 #   own bridge before starting Docker and use --bridge=BRIDGE to tell Docker to use your bridge instead.
+#   Can be set to undef, false in order to not be added
 #
 # [*iptables*]
 #   Do your iptables allow this particular connection? Docker will never make changes to your system iptables rules if you
@@ -125,6 +134,8 @@ class docker(
   $ensure                      = $docker::params::ensure,
   $service_state               = $docker::params::service_state,
   $service_enable              = $docker::params::service_enable,
+  $service_state_storage       = $docker::params::service_state_storage,
+  $service_enable_storage      = $docker::params::service_enable_storage,
   $selinux_enabled             = $docker::params::selinux_enabled,
   $bind_to                     = $docker::params::bind_to,
   $log_level                   = $docker::params::log_level,

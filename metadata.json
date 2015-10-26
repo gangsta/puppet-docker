@@ -1,6 +1,6 @@
 {
 	"name": "cristifalcas-docker",
-	"version": "5.0.1",
+	"version": "5.1.0",
 	"author": "Cristian Falcas",
 	"summary": "Module for installing and managing docker",
 	"license": "Apache-2.0",
@@ -18,6 +18,14 @@
 			"operatingsystemrelease": [ "7"
 			]
 		},{
+			"operatingsystem": "OracleLinux",
+			"operatingsystemrelease": [ "7"
+			]
+		},{
+			"operatingsystem": "Scientific",
+			"operatingsystemrelease": [ "7"
+			]
+		},{
 			"operatingsystem": "Fedora",
 			"operatingsystemrelease": [ "21"
 			]
@@ -31,8 +39,7 @@
 			"version_requirement": "3.4"
 		}
 	],
-	"dependencies": [
-		{
+	"dependencies": [{
 			"name": "puppetlabs/stdlib",
 			"version_requirement": ">= 4.1.0"
 		}
