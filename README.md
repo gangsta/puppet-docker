@@ -1,3 +1,6 @@
+# docker
+[![Build Status](https://travis-ci.org/cristifalcas/puppet-docker.png?branch=master)](https://travis-ci.org/cristifalcas/puppet-docker)
+
 Puppet module for installing, configuring and managing [Docker](https://github.com/dotcloud/docker)
 
 This module was forked from https://github.com/garethr/garethr-docker.git and modified to only work with
