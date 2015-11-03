@@ -15,8 +15,6 @@ class docker::params {
   $tmp_dir = '/var/tmp'
   $dns = undef
   $dns_search = undef
-  $proxy = undef
-  $no_proxy = undef
   $add_registry = undef
   $block_registry = undef
   $insecure_registry = undef

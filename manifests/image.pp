@@ -29,7 +29,7 @@ define docker::image(
   $docker_dir = undef,
   $docker_tar = undef,
 ) {
-  include docker::params
+  include ::docker::params
   $docker_command = 'docker'
   validate_re($ensure, '^(present|absent|latest)$')
   validate_re($image, '^[\S]*$')

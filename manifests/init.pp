@@ -63,12 +63,6 @@
 #   Defaults to false
 #   Type: Bool
 #
-# [*proxy*]
-#   Will set the http_proxy and https_proxy env variables in /etc/sysconfig/docker (redhat/centos) or /etc/default/docker (debian)
-#
-# [*no_proxy*]
-#   Will set the no_proxy variable in /etc/sysconfig/docker (redhat/centos) or /etc/default/docker (debian)
-#
 # [*extra_parameters*]
 #   Any extra parameters that should be passed to the docker daemon.
 #   Defaults to undefined
@@ -146,8 +140,6 @@ class docker(
   $block_registry              = $docker::params::block_registry,
   $insecure_registry           = $docker::params::insecure_registry,
   $extra_parameters            = undef,
-  $proxy                       = $docker::params::proxy,
-  $no_proxy                    = $docker::params::no_proxy,
   $storage_driver              = $docker::params::storage_driver,
   $dm_basesize                 = $docker::params::dm_basesize,
   $dm_fs                       = $docker::params::dm_fs,
@@ -166,10 +158,6 @@ class docker(
   validate_bool($selinux_enabled)
   validate_absolute_path($tmp_dir)
   validate_string($bind_to)
-
-  if $dns_search {
-    validate_array($dns_search)
-  }
 
   if $insecure_registry {
     validate_bool($insecure_registry)
@@ -200,9 +188,9 @@ class docker(
     validate_re($dm_fs, '^(ext4|xfs)$', 'Only ext4 and xfs are supported currently for dm_fs.')
   }
 
-  class { 'docker::install': } ->
-  class { 'docker::config': } ~>
-  class { 'docker::service': }
+  class { '::docker::install': } ->
+  class { '::docker::config': } ~>
+  class { '::docker::service': }
   contain 'docker::install'
   contain 'docker::config'
   contain 'docker::service'

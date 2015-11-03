@@ -30,7 +30,7 @@ define docker::registry(
   $password  = undef,
   $email     = undef,
 ) {
-  include docker::params
+  include ::docker::params
 
   validate_re($ensure, '^(present|absent)$')
 
