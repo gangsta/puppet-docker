@@ -1,6 +1,6 @@
 {
 	"name": "cristifalcas-docker",
-	"version": "5.2.0",
+	"version": "5.2.1",
 	"author": "Cristian Falcas",
 	"summary": "Module for installing and managing docker",
 	"license": "Apache-2.0",
