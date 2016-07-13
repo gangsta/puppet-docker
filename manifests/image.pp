@@ -21,13 +21,13 @@
 #   If you want to load a docker image from specific docker tar
 #
 define docker::image(
-  $ensure    = 'present',
-  $image     = $title,
-  $image_tag = undef,
-  $force     = false,
+  $ensure      = 'present',
+  $image       = $title,
+  $image_tag   = undef,
+  $force       = false,
   $docker_file = undef,
-  $docker_dir = undef,
-  $docker_tar = undef,
+  $docker_dir  = undef,
+  $docker_tar  = undef,
 ) {
   include ::docker::params
   $docker_command = 'docker'
