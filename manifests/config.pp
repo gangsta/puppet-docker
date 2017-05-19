@@ -1,6 +1,6 @@
 # == Class: docker::config
 #
-class docker::config {
+class docker::config inherits docker {
   file { '/etc/sysconfig/docker':
     ensure  => 'file',
     force   => true,
