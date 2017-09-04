@@ -18,10 +18,4 @@ class docker::config {
     force   => true,
     content => template("${module_name}/etc/sysconfig/docker-network.erb"),
   }
-
-  file { '/etc/sysconfig/docker-storage-setup':
-    ensure  => 'file',
-    force   => true,
-    content => template("${module_name}/etc/sysconfig/docker-storage-setup.erb"),
-  }
 }
