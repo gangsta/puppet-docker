@@ -1,10 +1,11 @@
 # docker
-[![Build Status](https://travis-ci.org/cristifalcas/puppet-docker.png?branch=master)](https://travis-ci.org/cristifalcas/puppet-docker)
 
 Puppet module for installing, configuring and managing [Docker](https://github.com/dotcloud/docker)
 
-This module was forked from https://github.com/garethr/garethr-docker.git and modified to only work with
+This module was forked from https://github.com/cristifalcas/puppet-docker.git and modified to only work with
 the docker package from centos.
+
+This Module will install by default docker-ce , if you want to use docker from Centos base Repos , set `docker_ce = false`,
 
 ## Support
 
@@ -137,4 +138,3 @@ docker::registry_auth::registries:
     password: 'secret'
     email: 'user1@example.io'
 ```
-
