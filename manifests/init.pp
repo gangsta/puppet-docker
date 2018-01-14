@@ -126,6 +126,7 @@
 #
 class docker(
   $ensure                      = $docker::params::ensure,
+  $docker_ce                   = true,
   $service_state               = $docker::params::service_state,
   $service_enable              = $docker::params::service_enable,
   $service_state_storage       = $docker::params::service_state_storage,
